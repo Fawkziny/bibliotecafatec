@@ -73,25 +73,25 @@
             formAluno.addEventListener('submit', function(event) {
                 event.preventDefault();
 
-                // Captura os dados do formulário
+  
                 const nome = document.getElementById('nome').value;
                 const matricula = document.getElementById('matricula').value;
                 const curso = document.getElementById('curso').value;
                 const email = document.getElementById('email').value;
 
-                // Cria um objeto representando o aluno
+         
                 const aluno = {
                     nome: nome,
                     matricula: matricula,
                     curso: curso,
                     email: email,
-                    locacoes: [] // Inicialmente vazio
+                    locacoes: [] 
                 };
 
-                // Salva o aluno no localStorage
+ 
                 salvarAluno(aluno);
 
-                // Limpa o formulário
+
                 formAluno.reset();
             });
 
