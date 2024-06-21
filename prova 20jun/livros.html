@@ -90,19 +90,13 @@
                     ano: ano
                 };
 
-                // Obtém os livros cadastrados do localStorage
                 let livros = JSON.parse(localStorage.getItem('livros')) || [];
 
-                // Adiciona o novo livro ao array de livros
                 livros.push(novoLivro);
-
-                // Atualiza o localStorage com os livros atualizados
                 localStorage.setItem('livros', JSON.stringify(livros));
 
-                // Limpa o formulário após o cadastro
                 formLivro.reset();
 
-                // Informa ao usuário que o livro foi cadastrado (pode ser melhorado visualmente)
                 alert('Livro cadastrado com sucesso!');
             });
         });
