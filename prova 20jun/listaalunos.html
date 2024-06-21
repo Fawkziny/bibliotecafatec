@@ -49,7 +49,6 @@
     <div class="container mt-4">
         <h1>Lista de Alunos</h1>
         <ul id="listaAlunos" class="list-group">
-            <!-- Aqui serão inseridos os alunos cadastrados -->
         </ul>
     </div>
 
@@ -58,29 +57,25 @@
         document.addEventListener('DOMContentLoaded', function() {
             const listaAlunos = document.getElementById('listaAlunos');
 
-            // Carrega os alunos do localStorage ao carregar a página
             carregarAlunos();
 
             function carregarAlunos() {
                 let alunos = JSON.parse(localStorage.getItem('alunos')) || [];
 
-                listaAlunos.innerHTML = ''; // Limpa a lista atual
+                listaAlunos.innerHTML = ''; 
 
                 alunos.forEach(function(aluno, index) {
                     const li = document.createElement('li');
                     li.classList.add('list-group-item');
                     li.textContent = `Nome: ${aluno.nome}, Matrícula: ${aluno.matricula}, Curso: ${aluno.curso}, E-mail: ${aluno.email}`;
 
-                    // Botão de Excluir
                     const btnExcluir = document.createElement('button');
                     btnExcluir.classList.add('btn', 'btn-danger', 'btn-sm', 'ms-2');
                     btnExcluir.textContent = 'Excluir';
                     btnExcluir.addEventListener('click', function() {
-                        // Remove o aluno do localStorage
                         alunos.splice(index, 1);
                         localStorage.setItem('alunos', JSON.stringify(alunos));
 
-                        // Remove o elemento da lista na interface
                         li.remove();
                     });
 
