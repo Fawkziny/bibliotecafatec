@@ -58,7 +58,6 @@
                 </tr>
             </thead>
             <tbody id="listaLivros">
-                <!-- Linhas de livros serão adicionadas dinamicamente -->
             </tbody>
         </table>
     </div>
@@ -67,13 +66,12 @@
         document.addEventListener('DOMContentLoaded', function() {
             const listaLivros = document.getElementById('listaLivros');
 
-            // Carregar livros cadastrados no localStorage
             carregarLivros();
 
             function carregarLivros() {
                 let livros = JSON.parse(localStorage.getItem('livros')) || [];
 
-                listaLivros.innerHTML = ''; // Limpa as linhas atuais da tabela
+                listaLivros.innerHTML = ''; 
 
                 livros.forEach(function(livro) {
                     const tr = document.createElement('tr');
