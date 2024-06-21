@@ -53,12 +53,10 @@
         <form id="formLocacao">
             <label for="aluno">Aluno:</label>
             <select id="aluno" name="aluno" required>
-                <!-- Opções de alunos serão adicionadas dinamicamente -->
             </select><br><br>
             
             <label for="livro">Livro:</label>
             <select id="livro" name="livro" required>
-                <!-- Opções de livros serão adicionadas dinamicamente -->
             </select><br><br>
             
             <label for="dataLocacao">Data de Locação:</label>
@@ -109,7 +107,6 @@
 
                 let locacoes = JSON.parse(localStorage.getItem('locacoes')) || [];
 
-                // Verificar se o livro já está locado
                 const livroJaLocado = locacoes.some(locacao => locacao.livro === livroSelecionado);
                 if (livroJaLocado) {
                     alert('O livro já foi retirado e não está disponível.');
